@@ -1,0 +1,39 @@
+# bean 自动覆盖
+spring.main.allow-bean-definition-overriding: true
+server:
+  servlet:
+    context-path: /activiti-rest
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8800
+
+logging:
+  path: ${LOGGING_PATH:/var/log}
+
+############################################################################
+# 数据库连接配置
+############################################################################
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_SERVER:localhost}:${DB_PORT:3306}/${DB_NAME:activiti}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: ${DB_POOL_SIZE:5}
+      minimum-idle: ${HIKARICP_MINIMUM_IDLE:2}
+      max-lifetime: ${HIKARICP_MAX_LIFETIME:900000}
+      validation-timeout: ${HIKARICP_VALIDATION_TIMEOUT:5000}
+      connection-timeout: ${HIKARICP_CONNECTION_TIMEOUT:30000}
+      idle-timeout: ${HIKARICP_IDLE_TIMEOUT:600000}
+      leakDetectionThreshold: 10000
+  ############################################################################
+  # Activiti数据库启动初始化配置
+  ############################################################################
+  activiti:
+    database-schema-update: true
+    check-process-definitions: false
+    db-identity-used: false
+    jpa-enabled: false
+    history-level: full
