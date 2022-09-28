@@ -12,7 +12,7 @@
     <groupId>com.yijianguanzhu.activiti</groupId>
     <artifactId>activiti6-restapi</artifactId>
     <version>6.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>activiti6-restapi</name>
     <description>activiti6 rest api</description>
 

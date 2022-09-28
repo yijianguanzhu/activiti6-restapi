@@ -14,6 +14,8 @@ logging:
 # 数据库连接配置
 ############################################################################
 spring:
+  application:
+    name: activity6-restful-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${DB_SERVER:localhost}:${DB_PORT:3306}/${DB_NAME:activiti}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
