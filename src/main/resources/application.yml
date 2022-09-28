@@ -5,7 +5,7 @@ server:
     context-path: /activiti-rest
   tomcat:
     uri-encoding: UTF-8
-  port: 8800
+  port: 8899
 
 logging:
   path: ${LOGGING_PATH:/var/log}
@@ -18,7 +18,7 @@ spring:
     name: activity6-restful-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_SERVER:localhost}:${DB_PORT:3306}/${DB_NAME:activiti}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://${DB_SERVER:localhost}:${DB_PORT:3306}/${DB_NAME:activiti}?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&nullCatalogMeansCurrent=true
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:root}
     hikari:
